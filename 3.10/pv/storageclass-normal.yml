@@ -4,6 +4,6 @@ metadata:
   name: normal
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
-provisioner: kubernetes.io/no-provisioner
+provisioner: no-provisioning
 volumeBindingMode: Immediate
 parameters:
