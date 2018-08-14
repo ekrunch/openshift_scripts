@@ -14,19 +14,19 @@ oc create -f auth/2-serviceaccount.yaml
 oc create -f auth/3-clusterrolebinding.yaml
 ```
 
-Next you have to grant permissions or the nfs client container won't start up due to permissions issues.
+__Next you have to grant permissions or the nfs client container won't start up due to permissions issues.__
 
 ```bash
 oc adm policy add-scc-to-user hostmount-anyuid system:serviceaccount:nfs-provisioner:nfs-client-provisioner
 oc adm policy add-cluster-role-to-user nfs-client-provisioner-runner system:serviceaccount:nfs-provisioner:nfs-client-provisioner
 ```
 
-Execute the deployment manifest to create the container and deploy it.
+__Execute the deployment manifest to create the container and deploy it.__
 ```bash
 oc create -f deployment-nfs-client-provisioner.yaml
 ```
 
-Now create the storage class
+__Now create the storage class__
 ```bash
 oc create -f storageclass-managed-nfs-storage.yml
 ```
