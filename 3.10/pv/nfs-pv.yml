@@ -7,8 +7,9 @@ spec:
     storage: 50Gi 
   accessModes:
     - ReadWriteMany 
-  persistentVolumeReclaimPolicy: Retain 
+  persistentVolumeReclaimPolicy: Recycle 
   nfs: 
     path: /volume1/OpenShift/storage/pv
     server: nfs-server.internal.yourdomain.com
     readOnly: false
+  storageClassName: normal
