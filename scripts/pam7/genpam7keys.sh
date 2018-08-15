@@ -49,4 +49,15 @@ else
 	echo "Removing keystore files."
 	rm ${KIESTOREFN} ${BCSTOREFN}
 
+	echo ""
+	echo "Business Central Server Keystore Secret Name : ${BCSECRETNAME}"
+	echo "Business Central Server Keystore Filename : ${BCSTOREFN}"
+	echo "Business Central Server Certificate Name : ${BCSECRETNAME}"
+	echo "Business Central Server Keystore Password : ${KPASS}"
+	echo ""
+	echo "KIE Server Keystore Secret Name : ${KIESECRETNAME}"
+	echo "KIE Server Keystore Filename : ${KIESTOREFN}"
+	echo "KIE Server Certificate Name : ${KIESECRETNAME}"
+	echo "KIE Server Keystore Password : ${KPASS}"
+
 fi
