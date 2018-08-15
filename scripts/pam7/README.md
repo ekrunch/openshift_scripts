@@ -3,6 +3,7 @@
 These scripts are for deploying / managing PAM 7 in OCP
 
 - genpam7keys.sh - Creates the neccessary keystore files for PAM 7 in OCP. **NOT** to be used for production environments as it makes self signed certs with poor passwords and generic DNs. Example : __"./genpam7keys.sh rhpam7-demo redhat123"__
+- createpam7authoringdemo.sh - Creates a project, calls the genpam7keys and generals a manifest of parameters, then calls __oc new-app__ to create an installation of the __rhpam70-authoring__ template.
 
 
 
@@ -10,6 +11,5 @@ These scripts are for deploying / managing PAM 7 in OCP
 Example of how to deploy a PAM 7 authoring environment in OCP 3.10
 
 ```bash
-oc new-project rhpam7-demo --display-name="RH Process Automation Manager 7 Demo"
-/genpam7keys.sh rhpam7-demo redhat123
+createpam7authoringdemo.sh rhpam7-demo redhat123
 ```
