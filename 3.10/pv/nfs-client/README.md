@@ -6,6 +6,13 @@ For more information, go to https://github.com/kubernetes-incubator/external-sto
 
 In my case, I create a new project called "nfs-provisioner", then executed the auth scripts (in the auth subdirectory of this repo) in order. I've numbered them in the order to execute.
 
+__Create Project and switch to it__
+
+```bash
+oc new-project nfs-provisioner --display-name="NFS Provisioner"
+oc project nfs-provisioner
+```
+
 __Create Cluster Role, Service Account, and Cluster Role Binding__
 
 ```bash
