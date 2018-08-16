@@ -1,5 +1,11 @@
 [OSEv3:vars]
 
+# Documntation Link for Prometheus
+# https://docs.openshift.com/container-platform/3.10/install_config/cluster_metrics.html#openshift-prometheus
+
+# The following playbook configures Prometheus
+# /usr/share/ansible/openshift-ansible/playbooks/openshift-prometheus/config.yml
+
 # Deploy Prometheus
 openshift_hosted_prometheus_deploy=true
 
