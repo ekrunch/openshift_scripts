@@ -1,0 +1,54 @@
+[OSEv3:children]
+masters
+nodes
+etcd
+
+[OSEv3:vars]
+ansible_ssh_user=root
+
+# Use HTPasswd for sign in
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
+
+# Set domain names
+openshift_master_default_subdomain=ocp.internal.unixwarhammer.com
+openshift_deployment_type=openshift-enterprise
+
+# FirewallD since iptables will eventually go away
+os_firewall_use_firewalld=True
+
+# Metrics and Loggings with dynamic PVCs
+openshift_metrics_install_metrics=true
+openshift_logging_install_logging=true
+openshift_logging_es_pvc_dynamic=true
+openshift_metrics_cassandra_storage_type=dynamic
+
+# Prometheus with dynamic PVCs
+openshift_hosted_prometheus_deploy=true
+openshift_prometheus_storage_type=pvc
+openshift_prometheus_alertmanager_storage_type=pvc
+openshift_prometheus_alertbuffer_storage_type=pvc
+
+# Grafana
+openshift_grafana_storage_type=pvc
+openshift_grafana_pvc_name=grafana
+openshift_grafana_pvc_size=5G
+
+# CFME
+openshift_management_install_management=true
+openshift_management_app_template=cfme-template
+openshift_management_storage_class=preconfigured
+
+
+
+[masters]
+ocpmaster.internal.unixwarhammer.com
+
+[etcd]
+ocpmaster.internal.unixwarhammer.com
+
+[nodes]
+ocpmaster.internal.unixwarhammer.com openshift_node_group_name='node-config-master'
+ocpinfra.internal.unixwarhammer.com openshift_node_group_name='node-config-infra'
+ocpnode1.internal.unixwarhammer.com openshift_node_group_name='node-config-compute'
+ocpnode2.internal.unixwarhammer.com openshift_node_group_name='node-config-compute'
+

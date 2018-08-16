@@ -2,6 +2,7 @@
 
 __Full Configuration Files__
 - inventory.4node - Basic 4 node inventory. 1 Master, 1 Infra, 2 Worker nodes. This is bare bones and only configures basic functionality.
+- inventory.4node.complete - 4 node inventory, same configuration as above, but with Prometheus, CFME, Grafana, etc. All of it uses PVCs so set up a dynamic provisioner. If you have NFS, I recommend the NFS Dyanmic Provisioner found [here](https://github.com/ekrunch/openshift_scripts/tree/master/3.10/pv/nfs-client)
 
 __Fragments__
 
