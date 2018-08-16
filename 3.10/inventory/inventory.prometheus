@@ -1,0 +1,9 @@
+[OSEv3:vars]
+
+# Deploy Prometheus
+openshift_hosted_prometheus_deploy=true
+
+# Use PVCs for storage. Convenient if you have a dynamic provisioner
+openshift_prometheus_storage_type=pvc
+openshift_prometheus_alertmanager_storage_type=pvc
+openshift_prometheus_alertbuffer_storage_type=pvc
