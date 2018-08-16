@@ -1,0 +1,9 @@
+[OSEv3:vars]
+
+# The following playbook configures Grafana
+# /usr/share/ansible/openshift-ansible/playbooks/openshift-grafana/config.yml
+
+# Use PVCs for storage. Convenient if you have a dynamic provisioner
+openshift_grafana_storage_type=pvc
+openshift_grafana_pvc_name=grafana
+openshift_grafana_pvc_size=5G

@@ -1,0 +1,16 @@
+[OSEv3:vars]
+
+# Documentation Link for CloudForms
+# https://docs.openshift.com/container-platform/3.10/install_config/cfme/role_variables.html
+
+# The following playbook configures CloudForms
+# /usr/share/ansible/openshift-ansible/playbooks/openshift-management/config.yml
+
+# Deploy Cloudforms
+openshift_management_install_management=true
+openshift_management_app_template=cfme-template
+
+# Use PVCs for storage. Convenient if you have a dynamic provisioner
+openshift_management_storage_class=preconfigured
+
+

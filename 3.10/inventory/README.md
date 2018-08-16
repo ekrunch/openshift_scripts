@@ -5,6 +5,8 @@ __Full Configuration Files__
 
 __Fragments__
 
-These files are **not** complete inventory files and should be added to an existing inventory to enable features.
+These files are **not** complete inventory files and should be added to an existing inventory to enable features. View each file for details on usage and documentation links. All of these files use PVCs so you'll need to build PVs manually or use a dynamic provisioner.
 
-- inventory.fragment.prometheus - Add support for Prometheus - See file for details
+- inventory.fragment.prometheus - Add support for Prometheus
+- inventory.fragment.cfme - Add support for CloudForms
+- inventory.fragment.grafana - Add support for Grafana (Requires Prometheus. Unsupported but works in OCP 3.10)
