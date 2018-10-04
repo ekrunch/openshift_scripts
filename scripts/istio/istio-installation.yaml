@@ -1,0 +1,27 @@
+# https://docs.openshift.com/container-platform/3.10/servicemesh-install/servicemesh-install.html#supported-configurations
+apiVersion: "istio.openshift.com/v1alpha1"
+kind: "Installation"
+metadata:
+  name: "istio-installation"
+spec:
+  deployment_type: openshift
+  istio:
+    authentication: true
+    community: false
+    prefix: openshift-istio-tech-preview/
+    version: 0.1.0
+  jaeger:
+    prefix: distributed-tracing-tech-preview/
+    version: 1.6.0
+    elasticsearch_memory: 1Gi
+  launcher:
+    openshift:
+      user: user
+      password: password
+    github:
+      username: username
+      token: token
+    catalog:
+      filter: booster.mission.metadata.istio
+      branch: v35
+      repo: https://github.com/fabric8-launcher/launcher-booster-catalog.git
