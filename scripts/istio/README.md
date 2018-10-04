@@ -9,3 +9,9 @@ https://docs.openshift.com/container-platform/3.10/servicemesh-install/serviceme
 
 - 99-elasticsearch.conf - Deploy to /etc/sysctl.d on each node for elasticsearch to function correctly
 - master-config.patch - Patch used to adjust master-config.yaml, must be run on all masters
+- sidecar-annotation.yaml - Used in each deployment where you want to enable automatic injection
+
+To use this, do the following
+
+1. Patch all masters using the patch-master.sh **Note : This script will restart master API and controllers**
+2. 

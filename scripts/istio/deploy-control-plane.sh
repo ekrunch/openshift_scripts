@@ -19,9 +19,9 @@ OCP_PUBLIC_URL=https://ocpmaster.internal.unixwarhammer.com:8443
 
 oc login -u system:admin
 
-echo Creating istio-operator namespace
-oc new-project istio-operator
-oc new-app -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.1.0-ocp-3.1.0-istio-1.0.0/istio/istio_product_operator_template.yaml --param=OPENSHIFT_ISTIO_MASTER_PUBLIC_URL=${OCP_PUBLIC_URL}
+echo Deploying control plane
+oc project istio-operator
+oc create -f istio-installation.yaml
 
 echo Listing pods that should have gotten deployed in the previous step
-oc get pods -n istio-operator
+oc get pods -n istio-system -w
