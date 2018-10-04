@@ -1,6 +1,6 @@
 ### Process Automation Manager 7 in OCP
 
-These scripts are for deploying / managing PAM 7 in OCP
+These scripts are for deploying / managing PAM 7 in OCP. They assume that you've followed the installation instructions for PAM 7 on OCP. If you have not, these scripts will not be able to find the template names. The OCP scripts are found in the downloads site for PAM 7.
 
 - genpam7keys.sh - Creates the neccessary keystore files for PAM 7 in OCP. **NOT** to be used for production environments as it makes self signed certs with poor passwords and generic DNs. Example : __"./genpam7keys.sh rhpam7-demo redhat123"__
 - createpam7authoringdemo.sh - Creates a project, calls the genpam7keys and generals a manifest of parameters, then calls __oc new-app__ to create an installation of the __rhpam70-authoring__ template.
