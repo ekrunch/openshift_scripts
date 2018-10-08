@@ -16,8 +16,6 @@ trap 'error_exit ${LINENO}' ERR
 
 OCP_CONFIG_DIR=/etc/origin/master
 
-oc login -u system:admin
-
 echo Patching configuration using master-config.patch, backup in master-config.yaml.prepatch
 cp -p ${OCP_CONFIG_DIR}/master-config.yaml ${OCP_CONFIG_DIR}/master-config.yaml.prepatch
 oc ex config patch ${OCP_CONFIG_DIR}/master-config.yaml.prepatch -p "$(cat master-config.patch)" > ${OCP_CONFIG_DIR}/master-config.yaml
