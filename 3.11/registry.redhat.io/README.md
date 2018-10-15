@@ -6,6 +6,8 @@ In order to facilite this, the following things need to be done.
 - Add this account to the ansible inventory used to install OCP.
 - Login to this registry with Docker, just in case. :)
 
+More information on registry configuration can be found in the 3.11 documentation [here](https://docs.openshift.com/container-platform/3.11/install/configuring_inventory_file.html#advanced-install-configuring-registry-location)
+
 **Note** : My testing has shown that I don't need to build a secret in OCP as seen on the portal site as it seems to be done accordingly by the installer. If that is not the case, please open up an issue.
 
 **Examples** :
