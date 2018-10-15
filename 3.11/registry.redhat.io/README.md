@@ -10,6 +10,10 @@ In order to facilitate this, the following things need to be done.
 
 More information on registry configuration can be found in the 3.11 documentation [here](https://docs.openshift.com/container-platform/3.11/install/configuring_inventory_file.html#advanced-install-configuring-registry-location)
 
+Additional information on the Red Hat Container Registries can be found at  https://access.redhat.com/RegistryAuthentication
+
+Additional troubleshooting steps for the registry can be found at https://access.redhat.com/articles/3560571
+
 **Note** : My testing has shown that I didn't need to build a secret in OCP after installation as seen on the portal site as it seems to be done accordingly by the installer. If anyone sees different results, let me know.
 
 ## Examples
