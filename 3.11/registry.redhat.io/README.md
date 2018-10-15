@@ -33,6 +33,6 @@ oreg_auth_password=1234567890abcdefgp94hrp93984fhe8rg09q438htaQUG(EA%(GJA$fja489
 
 On the 3rd tab of the token information screen, there is a command sequence to have Docker login to the new repository. As a precaution, I would recommend logging in here as well, on all machines in the OCP cluster. The 4th tab contains a config snippet that can be used to do the same thing without running a command, which would be handy for kickstart or other provisioning systems.
 
-Here is an example of the third tab. Just copy the commands using the clipboard icon on the right and paste them into your terminal. This should also update the  _~/.docker/config.json_ file.
+Here is an example of the third tab. Just copy the command using the clipboard icon on the right and paste them into your terminal. This should also update the  _~/.docker/config.json_ file.
 
 ![Screenshot](registry_redhat_io_docker.png)
