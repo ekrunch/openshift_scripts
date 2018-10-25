@@ -28,6 +28,8 @@ oc adm policy add-scc-to-user hostmount-anyuid system:serviceaccount:nfs-provisi
 oc adm policy add-cluster-role-to-user nfs-client-provisioner-runner system:serviceaccount:nfs-provisioner:nfs-client-provisioner
 ```
 
+**Edit the deployment-nfs-client-provisioner.yaml before running! It needs credentials for the NFS mount point.**
+
 __Execute the deployment manifest to create the container and deploy it.__
 ```bash
 oc create -f deployment-nfs-client-provisioner.yaml
