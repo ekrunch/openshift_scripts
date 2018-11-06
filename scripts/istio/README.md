@@ -11,6 +11,6 @@ To use this, perform the following steps
 2. Deploy the ElasticSearch configuration to nodes using __cp 99-elasticsearch.conf /etc/sysctl.d/__ and reboot them (If you don't want to restart right away, apply the changes using sysctl.)
 3. Review, edit, then execute __1-deploy-istio-operator.sh__ to deploy the Istio operator
 4. Review and edit __istio-control-plane-cr.yaml__ with appropriate credentials for your OCP environment.
-5. Review, edit, then execite __2-deploy-control-plane.sh__ to deploy the Istio control panel. **Note : This script requries your cluster URL, please edit the script accordingly before executing!**
+5. Review, edit, then execite __2-deploy-control-plane.sh__ to deploy the Istio control panel. **Note** : This script requries your cluster URL, please edit the script accordingly before executing!
 
 **Note** : Installation took several minutes on a 4 node cluster with 1 master, 1 infra, and 2 compute nodes. Running on 4 VMs on a single Cisco UCS box with 192G of RAM. Your mileage may vary.
