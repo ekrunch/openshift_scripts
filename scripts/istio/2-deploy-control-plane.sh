@@ -18,9 +18,6 @@ oc login -u system:admin
 
 echo Deploying control plane
 oc project istio-operator
-oc create -f istio-installation.yaml
-
-echo Listing pods that should have gotten deployed in the previous step
-oc get pods -n istio-operator
+oc create -f istio-control-plane-cr.yaml
 
 echo Watch progress with \"oc get pods -n istio-system -w\"

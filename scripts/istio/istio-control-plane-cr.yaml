@@ -1,0 +1,38 @@
+# https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/service_mesh_install/service-mesh-installation#supported-configurations
+#
+#
+# Modify the Kiali Username/Password - This is the login for the Kiali console and is not related to the OCP logins
+# Modify the Openshift Launcher user - This is the user you want to launch the Fabric8 Launcher
+# Modify the GitHub user/token - Github account you want to use to run the Fabric8 Launcher
+#
+apiVersion: "istio.openshift.com/v1alpha1"
+kind: "Installation"
+metadata:
+  name: "istio-installation"
+spec:
+  deployment_type: openshift
+  istio:
+    authentication: true
+    community: false
+    prefix: openshift-istio-tech-preview/
+    version: 0.3.0
+  jaeger:
+    prefix: distributed-tracing-tech-preview/
+    version: 1.7.0
+    elasticsearch_memory: 1Gi
+  kiali:
+    username: username
+    password: password
+    prefix: openshift-istio-tech-preview/
+    version: 0.8.1
+  launcher:
+    openshift:
+      user: user
+      password: password
+    github:
+      username: username
+      token: token
+    catalog:
+      filter: booster.mission.metadata.istio
+      branch: v62
+      repo: https://github.com/fabric8-launcher/launcher-booster-catalog.git
