@@ -15,4 +15,7 @@ To use this, perform the following steps
 
 **Note** : Installation took several minutes on a 4 node cluster with 1 master, 1 infra, and 2 compute nodes. Running on 4 VMs on a single Cisco UCS box with 192G of RAM. Your mileage may vary.
 
-To remove Istio, execute the _remove-istio.sh_ script.
+**Some useful scripts**
+
+- inject-sidecar.sh - Adds the sidecar to a deployment config. Usage : _inject-sidecar.sh dc/myapp_
+- remove-istio.sh - Removes Istio from the OCP installation. Careful here, there are no prompts to stop this from happening!
