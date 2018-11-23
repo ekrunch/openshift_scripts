@@ -15,7 +15,7 @@ spec:
     authentication: true
     community: false
     prefix: openshift-istio-tech-preview/
-    version: 0.3.0
+    version: 0.4.0
   jaeger:
     prefix: distributed-tracing-tech-preview/
     version: 1.7.0
@@ -23,8 +23,8 @@ spec:
   kiali:
     username: username
     password: password
-    prefix: openshift-istio-tech-preview/
-    version: 0.8.1
+    prefix: kiali/
+    version: v0.9.1
   launcher:
     openshift:
       user: user
@@ -34,5 +34,5 @@ spec:
       token: token
     catalog:
       filter: booster.mission.metadata.istio
-      branch: v62
+      branch: v71
       repo: https://github.com/fabric8-launcher/launcher-booster-catalog.git
