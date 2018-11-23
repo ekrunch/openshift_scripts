@@ -23,8 +23,8 @@ spec:
   kiali:
     username: username
     password: password
-    prefix: kiali/
-    version: v0.9.1
+    prefix: openshift-istio-tech-preview/
+    version: 0.9.1
   launcher:
     openshift:
       user: user
