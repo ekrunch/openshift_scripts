@@ -29,7 +29,7 @@ else
 	oc new-project $1 --display-name="RH Process Automation Manager 7 Demo"
 	oc project $1
 	./genpam7keys.sh $1 $2 yes
-	oc new-app --template=rhpam70-authoring --param-file=rhpamauth.env
+	oc new-app --template=rhpam71-authoring --param-file=rhpamauth.env
 	echo ""
 	echo "Environment created with the following parameters. Note the usernames / passwords needed to log in."
 	echo ""

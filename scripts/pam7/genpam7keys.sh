@@ -76,8 +76,8 @@ else
 		echo "KIE_SERVER_CONTROLLER_PWD=\"${KPASS}\"" >> ${ENVFILE}
 		echo "KIE_SERVER_USER=\"executionUser\"" >> ${ENVFILE}
 		echo "KIE_SERVER_PWD=\"${KPASS}\"" >> ${ENVFILE}
-		echo "ADMIN_USERNAME=\"eapadmin\"" >> ${ENVFILE}
-		echo "ADMIN_PASSWORD=\"${KPASS}\"" >> ${ENVFILE}
+		#echo "ADMIN_USERNAME=\"eapadmin\"" >> ${ENVFILE}
+		#echo "ADMIN_PASSWORD=\"${KPASS}\"" >> ${ENVFILE}
 		echo "BUSINESS_CENTRAL_HTTPS_SECRET=\"businesscentral-app-secret\"" >> ${ENVFILE}
 		echo "BUSINESS_CENTRAL_HTTPS_KEYSTORE=\"businesscentral.keystore\"" >> ${ENVFILE}
 		echo "BUSINESS_CENTRAL_HTTPS_NAME=\"businesscentral-app-secret\"" >> ${ENVFILE}
