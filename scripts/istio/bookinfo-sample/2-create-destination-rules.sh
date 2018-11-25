@@ -16,4 +16,5 @@ trap 'error_exit ${LINENO}' ERR
 
 oc project bookinfo
 
-oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.0/samples/bookinfo/networking/destination-rule-all.yaml
+#oc apply -f https://raw.githubusercontent.com/istio/istio/1.0.3/samples/bookinfo/networking/destination-rule-all.yaml
+oc apply -f https://raw.githubusercontent.com/istio/istio/1.0.3/samples/bookinfo/networking/destination-rule-all-mtls.yaml
