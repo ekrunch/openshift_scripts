@@ -28,7 +28,7 @@ oc new-project istio-operator
 oc project istio-operator
 
 echo Creating istio app
-oc new-app -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.4.0/istio/istio_product_operator_template.yaml --param=OPENSHIFT_ISTIO_MASTER_PUBLIC_URL=${OCP_PUBLIC_URL}
+oc new-app -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.5.0/istio/istio_product_operator_template.yaml --param=OPENSHIFT_ISTIO_MASTER_PUBLIC_URL=${OCP_PUBLIC_URL}
 
 echo Waiting 10 seconds for OCP to calm down
 sleep 10
