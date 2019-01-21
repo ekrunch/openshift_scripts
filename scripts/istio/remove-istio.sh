@@ -22,4 +22,4 @@ echo Remvoing Istio Installation
 oc delete -n istio-operator Installation istio-installation
 
 echo Removing Istio Operator
-oc process -n istio-operator -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.5.0/istio/istio_product_operator_template.yaml | oc delete -f -
+oc process -n istio-operator -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.6/istio/istio_product_operator_template.yaml | oc delete -f -

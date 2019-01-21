@@ -18,6 +18,6 @@ oc new-project bookinfo
 oc project bookinfo
 oc adm policy add-scc-to-user anyuid -z default -n bookinfo
 oc adm policy add-scc-to-user privileged -z default -n bookinfo
-oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/maistra-0.5.0/bookinfo.yaml
-oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/maistra-0.5.0/bookinfo-gateway.yaml
+oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/master/bookinfo.yaml
+oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/master/bookinfo-gateway.yaml
 

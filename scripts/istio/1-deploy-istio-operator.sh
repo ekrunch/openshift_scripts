@@ -28,13 +28,15 @@ oc new-project istio-operator
 oc project istio-operator
 
 echo Creating istio app
-oc new-app -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.5.0/istio/istio_product_operator_template.yaml --param=OPENSHIFT_ISTIO_MASTER_PUBLIC_URL=${OCP_PUBLIC_URL}
+oc new-app -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.6/istio/istio_product_operator_template.yaml --param=OPENSHIFT_ISTIO_MASTER_PUBLIC_URL=${OCP_PUBLIC_URL}
 
-echo Waiting 10 seconds for OCP to calm down
-sleep 10
+#echo Waiting 10 seconds for OCP to calm down
+#sleep 10
 
-echo Listing pods that should have gotten deployed in the previous step
-oc get pods -n istio-operator
+echo To check status, use the following commands.
 
-echo Viewing logs
-oc logs -n istio-operator $(oc -n istio-operator get pods -l name=istio-operator --output=jsonpath={.items..metadata.name})
+echo List pods that should have gotten deployed in the previous step, an istio-operator pod should be there and running. 
+echo oc get pods -n istio-operator
+
+echo Viewing log of the istio operator pod, there should be 5 lines in the log letting you know that the operator is watching the resources.
+echo oc logs -n istio-operator $(oc -n istio-operator get pods -l name=istio-operator --output=jsonpath={.items..metadata.name})
