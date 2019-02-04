@@ -4,6 +4,10 @@ metadata:
   name: managed-nfs-storage
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
+  labels:
+    disk-type: hdd
+    speed: slow
+    volume-type: nfs4
 provisioner: nfs-client-prov # or choose another name, must match deployment's env PROVISIONER_NAME'
 parameters:
   archiveOnDelete: "false"
