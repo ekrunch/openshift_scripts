@@ -18,4 +18,7 @@ To use this, perform the following steps
 **Some useful scripts**
 
 - inject-sidecar.sh - Adds the sidecar to a deployment config. Usage : _inject-sidecar.sh dc/myapp_
-- remove-istio.sh - Removes Istio from the OCP installation. Careful here, there are no prompts to stop this from happening!
+
+**Careful here**, there are no prompts to stop this from happening!
+- 98-remove-istio-installation.sh - Removes Istio Installation. 
+- 99-remove-istio-operator.sh - Removes Istio Operator.
