@@ -16,8 +16,12 @@ trap 'error_exit ${LINENO}' ERR
 
 oc new-project bookinfo
 oc project bookinfo
+
 oc adm policy add-scc-to-user anyuid -z default -n bookinfo
 oc adm policy add-scc-to-user privileged -z default -n bookinfo
+
+# Enable automatic injection for the bookinfo namespace
+#oc patch namespace $(oc project -q) -p '{ "metadata": { "annotations": { "sidecar.istio.io/inject": "true" } } }'
 oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/master/bookinfo.yaml
 oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/master/bookinfo-gateway.yaml
 
