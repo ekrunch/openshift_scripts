@@ -19,4 +19,4 @@ trap 'error_exit ${LINENO}' ERR
 oc login -u system:admin
 
 echo Removing Istio Operator
-oc process -n istio-operator -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.7/istio/istio_product_operator_template.yaml | oc delete -f -
+oc process -n istio-operator -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.8/istio/istio_product_operator_template.yaml | oc delete -f -
