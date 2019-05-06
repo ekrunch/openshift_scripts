@@ -22,21 +22,15 @@ oc login -u system:admin
 
 echo Creating istio-operator namespace
 oc new-project istio-operator
-
-# Just in case the project creation fails, this should throw an error and stop
-# the script from executing.
-oc project istio-operator
+oc new-project istio-system
 
 echo Creating istio app
-oc new-app -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.8/istio/istio_product_operator_template.yaml --param=OPENSHIFT_ISTIO_MASTER_PUBLIC_URL=${OCP_PUBLIC_URL}
-
-#echo Waiting 10 seconds for OCP to calm down
-#sleep 10
+oc apply -n istio-operator -f https://raw.githubusercontent.com/Maistra/istio-operator/maistra-0.10/deploy/servicemesh-operator.yaml
 
 echo To check status, use the following commands.
 
 echo List pods that should have gotten deployed in the previous step, an istio-operator pod should be there and running. 
-echo oc get pods -n istio-operator
+echo oc get pods -n istio-operator -l name=istio-operator
 
-echo Viewing log of the istio operator pod, there should be 5 lines in the log letting you know that the operator is watching the resources.
+echo Once the pod has successfuly started, view the log of the istio operator pod. The last few lines of the log should show that the controller and worker have been started.
 echo oc logs -n istio-operator $(oc -n istio-operator get pods -l name=istio-operator --output=jsonpath={.items..metadata.name})

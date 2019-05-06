@@ -16,10 +16,10 @@ trap 'error_exit ${LINENO}' ERR
 
 oc project bookinfo
 
-oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.0/samples/bookinfo/platform/kube/bookinfo-db.yaml
-oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.0/samples/bookinfo/platform/kube/bookinfo-ratings-v2.yaml
-oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.0/samples/bookinfo/platform/kube/bookinfo-mysql.yaml
-oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.0/samples/bookinfo/platform/kube/bookinfo-ratings-v2-mysql.yaml
+oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.1/samples/bookinfo/platform/kube/bookinfo-db.yaml
+oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.1/samples/bookinfo/platform/kube/bookinfo-ratings-v2.yaml
+oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.1/samples/bookinfo/platform/kube/bookinfo-mysql.yaml
+oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.1/samples/bookinfo/platform/kube/bookinfo-ratings-v2-mysql.yaml
 
 echo Waiting 10 seconds for the deployments to calm down so we can patch the sidecar injector annotation in
 sleep 10
