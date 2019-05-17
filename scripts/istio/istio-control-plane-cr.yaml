@@ -25,7 +25,6 @@ spec:
 
   istio:
     global:
-      hub: openshift-istio-tech-preview/
       proxy:
         resources:
           requests:
