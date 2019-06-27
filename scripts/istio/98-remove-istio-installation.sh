@@ -18,7 +18,7 @@ trap 'error_exit ${LINENO}' ERR
 
 oc login -u system:admin
 
-echo Remvoing Istio Installation
-oc delete -n istio-operator Installation istio-installation
+echo "Remvoing Istio Installation (only works if the installation is named basic-install like the example provided)"
+oc delete ServiceMeshControlPlane/basic-install -n istio-system
 
-echo Please wait until the ansible installer removes the istio-system workspace and then execute 99-remove-istio-operator.sh to remove the operator
+echo Please wait until the installer removes everything in the istio-system namespace and then execute 99-remove-istio-operator.sh to remove the operator

@@ -1,12 +1,5 @@
-# https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/service_mesh_install/service-mesh-installation#supported-configurations
-#
-#
-# Modify the Kiali Username/Password - This is the login for the Kiali console and is not related to the OCP logins
-# Modify the Openshift Launcher user - This is the user you want to launch the Fabric8 Launcher
-# Modify the GitHub user/token - Github account you want to use to run the Fabric8 Launcher
-#
-apiVersion: istio.openshift.com/v1alpha3
-kind: ControlPlane
+apiVersion: maistra.io/v1
+kind: ServiceMeshControlPlane
 metadata:
   name: basic-install
 spec:
@@ -34,6 +27,7 @@ spec:
             cpu: 500m
             memory: 128Mi
       mtls: true
+      disablePolicyChecks: false
 
     gateways:
       istio-egressgateway:
@@ -47,7 +41,18 @@ spec:
         autoscaleEnabled: false
 
       telemetry:
+          autoscaleEnabled: false
+          resources:
+            requests:
+              cpu: 100m
+              memory: 1G
+            limits:
+              cpu: 500m
+              memory: 4G
+
+      pilot:
         autoscaleEnabled: false
+        traceSampling: 100.0
         resources:
           requests:
             cpu: 100m

@@ -17,6 +17,6 @@ trap 'error_exit ${LINENO}' ERR
 oc login -u system:admin
 
 echo Deploying control plane
-oc create -n istio-system -f istio-control-plane-cr.yaml
+oc create -n istio-system -f istio-installation.yaml
 
 echo Watch progress with \"oc get pods -n istio-system -w\"

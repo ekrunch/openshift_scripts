@@ -16,8 +16,6 @@ error_exit() {
 
 trap 'error_exit ${LINENO}' ERR
 
-OCP_PUBLIC_URL=https://ocpmaster.internal.unixwarhammer.com:8443
-
 oc login -u system:admin
 
 echo Creating istio-operator namespace
@@ -25,12 +23,9 @@ oc new-project istio-operator
 oc new-project istio-system
 
 echo Creating istio app
-oc apply -n istio-operator -f https://raw.githubusercontent.com/Maistra/istio-operator/maistra-0.10/deploy/servicemesh-operator.yaml
+oc apply -n istio-operator -f https://raw.githubusercontent.com/Maistra/istio-operator/maistra-0.11/deploy/servicemesh-operator.yaml
 
-echo To check status, use the following commands.
+echo To check status, use the following command.
 
 echo List pods that should have gotten deployed in the previous step, an istio-operator pod should be there and running. 
 echo oc get pods -n istio-operator -l name=istio-operator
-
-echo Once the pod has successfuly started, view the log of the istio operator pod. The last few lines of the log should show that the controller and worker have been started.
-echo oc logs -n istio-operator $(oc -n istio-operator get pods -l name=istio-operator --output=jsonpath={.items..metadata.name})
