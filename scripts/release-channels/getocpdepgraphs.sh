@@ -8,7 +8,6 @@ mkdir -p ${OUTPUTDIR}
 for item in "${RELEASECHANNELS[@]}"; 
 do
   echo "Channel: ${item}"
-  #curl -sH 'Accept:application/json' 'https://api.openshift.com/api/upgrades_info/v1/graph?channel=${item}&arch=amd64' | ./graph.sh | dot -Tsvg > ${OUTPUTDIR}/${item}.svg
   curl -sH 'Accept:application/json' "https://api.openshift.com/api/upgrades_info/v1/graph?channel=${item}&arch=amd64"  | ./graph.sh | dot -Tsvg > ${OUTPUTDIR}/${item}.svg
 done
 
