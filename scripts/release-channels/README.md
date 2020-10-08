@@ -12,8 +12,14 @@
 - candidate-4.3
 - candidate-4.4
 
+### Requirements
+- curl
+- graphviz
+- jq
+
 ### Included files
 
 - getocpdepgraphs.sh - Wrapper script to creates graphs of the above channels. Calls the graph.sh script
 - graphs - Output directory, it's contents will be ignored by git
 - graph.sh - Scripts from RedHat support to graph the channels.
+

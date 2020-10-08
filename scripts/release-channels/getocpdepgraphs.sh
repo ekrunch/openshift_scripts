@@ -10,6 +10,7 @@ RELEASECHANNELS=(
 	'fast-4.3' 
 	'fast-4.4' 
 	'fast-4.5' 
+	'candidate-4.2' 
 	'candidate-4.3' 
 	'candidate-4.4'
 	'candidate-4.5')
