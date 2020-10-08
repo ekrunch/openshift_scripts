@@ -1,16 +1,6 @@
 # Release Channels Graph generator.
 
-### This scripts uses the "dot" and "jq" processor to create SVG files of the OCP 4.x release channels. Currently the script runs against the following channels. __Note__ : Not all release channels are visible in the OCP UI. It's dependant on what version of the console container is in use.
-
-- stable-4.1
-- stable-4.2
-- stable-4.3
-- stable-4.4
-- fast-4.2
-- fast-4.3
-- fast-4.4
-- candidate-4.3
-- candidate-4.4
+### This scripts uses the "dot" and "jq" processor to create SVG files of the OCP 4.x release channels. Currently the script runs against the 4.x channels I'm aware of. __Note__ : Not all release channels are visible in the OCP UI. It's dependant on what version of the console container is in use.
 
 ### Requirements
 - curl
